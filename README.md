@@ -1,6 +1,13 @@
 # Connect Digital Project
 
 Este projeto foi desenvolvido por Igor Vinicius Leite de Carvalho.
+## Pré-requisitos
+
+Antes de iniciar, certifique-se de ter os seguintes itens instalados em sua máquina:
+
+- **[Node.js](https://nodejs.org/)** (versão recomendada: LTS)
+- **[npm](https://www.npmjs.com/)** (gerenciador de pacotes do Node.js, geralmente já vem com o Node)
+- **[Git](https://git-scm.com/)** (para clonar o repositório)
 
 ## Configuração do Banco de Dados
 
