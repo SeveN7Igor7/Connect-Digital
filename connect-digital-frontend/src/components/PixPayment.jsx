@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import QRCode from 'react-qr-code';
 import { Button } from '@/components/ui/button.jsx';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card.jsx';
 import { Alert, AlertDescription } from '@/components/ui/alert.jsx';
@@ -181,7 +182,7 @@ const PixPayment = () => {
                   </AlertDescription>
                 </Alert>
 
-                {/* QR Code */}
+                {/* QR Code gerado no front-end */}
                 <div className="text-center space-y-4 p-6 bg-gradient-to-br from-gray-50 to-gray-100 rounded-xl border">
                   <h3 className="font-semibold text-gray-800 flex items-center justify-center gap-2">
                     <QrCode className="w-5 h-5" />
@@ -189,10 +190,11 @@ const PixPayment = () => {
                   </h3>
                   <div className="flex justify-center">
                     <div className="p-4 bg-white rounded-xl shadow-lg border-2 border-gray-200 hover:shadow-xl transition-shadow duration-300">
-                      <img 
-                        src={pixData.qr_code_image_base64} 
-                        alt="QR Code PIX"
-                        className="w-48 h-48 object-contain"
+                      <QRCode 
+                        value={pixData.qr_code_copy_paste}
+                        size={192}
+                        bgColor="#ffffff"
+                        fgColor="#000000"
                       />
                     </div>
                   </div>
@@ -287,28 +289,14 @@ const PixPayment = () => {
         }
         
         @keyframes slide-up {
-          from { 
-            opacity: 0; 
-            transform: translateY(20px); 
-          }
-          to { 
-            opacity: 1; 
-            transform: translateY(0); 
-          }
+          from { opacity: 0; transform: translateY(20px); }
+          to { opacity: 1; transform: translateY(0); }
         }
         
         @keyframes bounce-in {
-          0% { 
-            opacity: 0; 
-            transform: scale(0.9); 
-          }
-          50% { 
-            transform: scale(1.05); 
-          }
-          100% { 
-            opacity: 1; 
-            transform: scale(1); 
-          }
+          0% { opacity: 0; transform: scale(0.9); }
+          50% { transform: scale(1.05); }
+          100% { opacity: 1; transform: scale(1); }
         }
         
         @keyframes shake {
@@ -316,19 +304,19 @@ const PixPayment = () => {
           25% { transform: translateX(-5px); }
           75% { transform: translateX(5px); }
         }
-        
+
         .animate-fade-in {
           animation: fade-in 0.6s ease-out;
         }
-        
+
         .animate-slide-up {
           animation: slide-up 0.8s ease-out;
         }
-        
+
         .animate-bounce-in {
           animation: bounce-in 0.6s ease-out;
         }
-        
+
         .animate-shake {
           animation: shake 0.5s ease-in-out;
         }
@@ -338,4 +326,3 @@ const PixPayment = () => {
 };
 
 export default PixPayment;
-
