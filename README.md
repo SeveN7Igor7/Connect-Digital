@@ -43,9 +43,9 @@ O host para conexão via navegador para o instrutor ver o banco de dados é: `pg
    npm install --force
    ```
 3. Instale uma dependência adicional:
-```bash
+   ```bash
    npm install react-qr-code --legacy-peer-deps
-```
+   ```
 4. Inicie o aplicativo de desenvolvimento:
    ```bash
    npm run dev
